@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
+import { WikipediaSearchService } from './wikipedia-search.service';
+
+// application wide shared Rx operators
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css']
 })
+
 export class AppComponent {
-  title = 'app works!';
+  items: Array<string>;
+  constructor(private service: WikipediaSearchService) { }
+
+  search(term: string) {
+    this.service.search(term)
+      .subscribe(results => this.items = results);
+  }
 }

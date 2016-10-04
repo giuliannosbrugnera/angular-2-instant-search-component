@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 .offset-lg-1">
+      <h2>
+        Wikipedia search
+      </h2>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-lg-10 .offset-lg-1">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="search">Search: </label>
+          <input type="text" class="form-control" id="search" (input)="search($event.target.value)">
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-lg-10 .offset-lg-1">
+      <ul>
+        <li *ngFor="let item of items">{{item}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
