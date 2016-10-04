@@ -12,7 +12,7 @@
       <form class="form-inline">
         <div class="form-group">
           <label for="search">Search: </label>
-          <input type="text" class="form-control" id="search" (input)="search($event.target.value)">
+          <input type="text" class="form-control" id="search" (input)="term$.next($event.target.value)">
         </div>
       </form>
     </div>
